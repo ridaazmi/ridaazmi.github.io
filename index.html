@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Rida AZMI - Spatial Data Scientist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-bg: #ecf0f1;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--white);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        header h2 {
+            margin: 0 0 15px;
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #bdc3c7;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .contact-info p {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+             color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            background-color: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+        }
+
+        .main-content {
+            padding: 40px 30px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .executive-summary p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .skill-item strong {
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 0;
+        }
+
+        .company-date {
+            font-style: italic;
+            color: #7f8c8d;
+            margin: 5px 0 10px;
+            font-size: 0.9em;
+        }
+
+        .experience-item ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-list li {
+            background: #e1e8ed;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            color: var(--secondary-color);
+        }
+
+        .pub-list {
+            padding-left: 20px;
+        }
+
+        .pub-list li {
+            margin-bottom: 10px;
+        }
+
+        .languages-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .languages-list li {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        @media (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Dr. Rida AZMI</h1>
+            <h2>PhD in Geospatial Data Science & GeoAI</h2>
+            <p style="margin-bottom: 20px; font-style: italic; color: #ecf0f1;">Candidate for Visiting Researcher in Agentic AI Systems for Earth Observation (ESA Φ-lab)</p>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Casablanca, Morocco</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+212676341232">+212 6 76 34 12 32</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ridaazmi@gmail.com">ridaazmi@gmail.com</a> / <a href="mailto:rida.azmi@um6p.ma">rida.azmi@um6p.ma</a></p>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-graduation-cap"></i> Scholar</a>
+                <a href="#"><i class="fab fa-orcid"></i> ORCID</a>
+                <a href="#"><i class="fas fa-search"></i> SCOPUS</a>
+            </div>
+        </header>
+
+        <div class="main-content">
+            
+            <section class="executive-summary">
+                <h3><i class="fas fa-user-tie"></i> Executive Summary</h3>
+                <p>Geospatial Data Scientist and Research Scientist with a PhD in Spatial Remote Sensing and 10+ years of hands-on experience in satellite image analysis, spatial Machine Learning, and complex geospatial data architectures. Strong expertise in developing automated analytical pipelines, spatial decision-support tools, and multi-source data integration for environmental and urban resilience. Author of 45+ peer-reviewed scientific publications and co-author of a book on spatial analysis in R.</p>
+                <p>Currently focusing on leveraging Geospatial Foundation Models (GFMs) for urban climate applications—combining Earth Observation (EO), multi-source geospatial data, and advanced AI architectures to better understand and model complex urban climate dynamics. My work explores the integration of foundation models with Agentic AI for automated scientific reasoning, tool orchestration, and scalable geospatial analysis, with a particular focus on urban heat, environmental dynamics, and climate-resilient cities.</p>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-layer-group"></i> Core Competencies & GeoAI Stack</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <strong>Agentic AI & GeoAI Orchestration:</strong>
+                        Agentic Systems & Scientific Reasoning, Tool-Augmented Workflows, Geospatial Foundation Models, Automated Spatial Pipelines, Multi-Agent Collaboration.
+                    </div>
+                    <div class="skill-item">
+                        <strong>Earth Observation & Remote Sensing:</strong>
+                        Satellite Image Processing, Object-Based Image Analysis (OBIA), Multispectral & SAR Analysis, Land Cover / Land Use Change, Hydrological & Flood Risk Modeling.
+                    </div>
+                    <div class="skill-item">
+                        <strong>Machine Learning & SciML:</strong>
+                        Supervised & Unsupervised Classification, Feature Engineering, Spatial Predictive Analytics, Model Evaluation & Benchmarking.
+                    </div>
+                    <div class="skill-item">
+                        <strong>Programming & Spatial Data Eng:</strong>
+                        Python (GeoPandas, Rasterio, PyTorch, NumPy), SQL (PostgreSQL/PostGIS), R (R-Spatial), JavaScript, Spatial ETL, REST APIs.
+                    </div>
+                    <div class="skill-item">
+                        <strong>Platforms & Tools:</strong>
+                        QGIS, ArcGIS Pro, Google Earth Engine, Power BI, Open-Source Geospatial Ecosystem.
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-briefcase"></i> Professional Experience</h3>
+                
+                <div class="experience-item">
+                    <h4 class="job-title">Research Scientist</h4>
+                    <div class="company-date">Center for Urban Systems – UM6P (Morocco) | June 2023 – Present</div>
+                    <ul>
+                        <li>Architected end-to-end automated spatial data analytical pipelines for the Urban Data Hub, enabling data-driven decision-making through high-resolution spatial datasets.</li>
+                        <li>Led research on integrating multi-source Earth Observation data with urban datasets to model spatial dynamics and infrastructure vulnerability.</li>
+                        <li>Designed and delivered advanced executive training modules in Spatial Data Engineering, GeoAI, and Urban Data Management.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h4 class="job-title">International Expert Consultant in Geospatial Data Science</h4>
+                    <div class="company-date">Kin Elenda & GCIEP Projects (Kinshasa, DRC) | 2023 – Present</div>
+                    <ul>
+                        <li>Developed spatial decision-support systems integrating high-resolution remote sensing, digital elevation models, and hydrological data for flood risk and urban resilience diagnostics.</li>
+                        <li>Structured relational spatial databases (PostgreSQL/PostGIS) and spatial data governance frameworks for municipal infrastructure management.</li>
+                        <li>Generated automated thematic mapping pipelines to assist executive policy-makers and international technical task forces.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h4 class="job-title">MOOC Co-Designer & Instructor</h4>
+                    <div class="company-date">African Cities Lab – UM6P | 2022 – Present</div>
+                    <ul>
+                        <li>Co-created the online course "Urban Data Management: Key to Developing Smarter African Cities", training hundreds of professionals across the continent.</li>
+                        <li>Developed practical curricula introducing Machine Learning/AI methods for spatial decision support, crowdsourced spatial data collection, and GIS workflows.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h4 class="job-title">Postdoctoral Researcher</h4>
+                    <div class="company-date">Mohammed VI Polytechnic University (UM6P, Benguerir) | December 2020 – June 2023</div>
+                    <ul>
+                        <li>Conducted cutting-edge research on reproducible geospatial pipelines and spatial decision-support systems.</li>
+                        <li>Coordinated multi-disciplinary scientific projects resulting in peer-reviewed publications in high-impact international journals.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h4 class="job-title">Senior GIS & Data Analyst Consultant</h4>
+                    <div class="company-date">TARGA-AIDE / Ministry of Agriculture / ORMVA-OZ (Morocco) | 2015 – 2020</div>
+                    <ul>
+                        <li>Engineered automated sampling workflows and statistical spatial models for the Moroccan National Agricultural Registry (RGA).</li>
+                        <li>Designed GIS-based monitoring frameworks and spatial databases (PostGIS) for rural development and environmental impact assessments.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                
+                <div class="education-item">
+                    <h4 class="job-title">PhD in Spatial Remote Sensing</h4>
+                    <div class="company-date">Mohammed V University, Rabat, Morocco | 2013 – 2017</div>
+                    <p style="margin-top: 5px; font-size: 0.95em;">Focus: Advanced Satellite Image Processing & Geoinformatics.</p>
+                </div>
+
+                <div class="education-item">
+                    <h4 class="job-title">Master’s Degree in GIS and Remote Sensing</h4>
+                    <div class="company-date">Hassan II University, Casablanca, Morocco | 2010 – 2012</div>
+                </div>
+
+                <div class="education-item">
+                    <h4 class="job-title">Bachelor of Science in Geophysics</h4>
+                    <div class="company-date">Hassan I University, Settat, Morocco | 2007 – 2010</div>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-certificate"></i> Professional Certifications</h3>
+                <p style="margin-bottom: 10px;"><strong>IBM Data Science Professional Specialization (8 Verified Certificates):</strong></p>
+                <ul class="cert-list">
+                    <li>Machine Learning with Python</li>
+                    <li>Applied Data Science Capstone</li>
+                    <li>Data Analysis with Python</li>
+                    <li>Databases and SQL for Data Science</li>
+                    <li>Python for Data Science and AI</li>
+                    <li>Data Visualization with Python</li>
+                    <li>Data Science Methodology</li>
+                    <li>Open Source Tools for Data Science</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-bullhorn"></i> Key Publications & Research Contributions</h3>
+                <ul class="pub-list">
+                    <li><strong>45+ Peer-Reviewed Articles</strong> in international journals indexed in Web of Science/Scopus focusing on Remote Sensing, Spatial Analysis, and Geoinformatics.</li>
+                    <li><strong>Book Co-Author:</strong> "Utilisation du R-Spatial" (Guide on spatial data analytics and statistical modeling in R).</li>
+                    <li><strong>International Speaker:</strong> Presented research findings at 10+ international scientific conferences on GIS, Remote Sensing, and Spatial AI.</li>
+                    <li><em style="font-size: 0.9em; color: #7f8c8d;">(Full list of publications available on Google Scholar / upon request)</em></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-language"></i> Languages</h3>
+                <ul class="languages-list">
+                    <li><strong>Arabic:</strong> Native Speaker</li>
+                    <li><strong>English:</strong> Professional Working Proficiency</li>
+                    <li><strong>French:</strong> Professional Working Proficiency</li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>
